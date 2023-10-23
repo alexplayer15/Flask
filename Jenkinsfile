@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from a GitHub repository using Git
-                sh 'git clone https://github.com/alexplayer15/Flask/main.git'
+                sh  'https://github.com/alexplayer15/Flask.git'
             }
         }
         // Add more stages for your CI/CD process
