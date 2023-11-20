@@ -13,21 +13,15 @@ pipeline {
     stage('Build') {
         steps {
             // Example: Install Python dependencies using pip
-            sh 'pip install -r requirements.txt'
+            sh 'pip install -r dependencies.txt'
             
             // Example: Run linting
-            sh 'pylint your_code.py'
+            sh 'pylint main.py'
             
             // Example: Run unit tests
             sh 'python -m unittest discover -s tests -p "*_test.py"'
+        }
     }
+
 }
-    from flask import Flask, render_template, request
-    from PIL import Image
-    import numpy as np
-    from keras.preprocessing.image import load_img, img_to_array
-    from keras.applications.vgg16 import preprocess_input, decode_predictions
-    # from keras.applications.vgg16 import VGG16
-    import tensorflow as tf
-    }
 }
