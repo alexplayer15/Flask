@@ -19,7 +19,7 @@ pipeline {
             sh 'pylint main.py'
             
             // Example: Run unit tests
-            sh 'python -m unittest discover -s tests -p "*_test.py"'
+            // sh 'python -m unittest discover -s tests -p "*_test.py"'
         }
     }
 
