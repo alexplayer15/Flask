@@ -12,6 +12,9 @@ pipeline {
         }
     stage('Build') {
         steps {
+            // update python package manager
+            sh 'pip install --upgrade pip'            
+
             // Example: Install Python dependencies using pip
             sh 'pip install -r dependencies.txt'
             
