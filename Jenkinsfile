@@ -13,10 +13,10 @@ pipeline {
     stage('Build') {
         steps {
             // update python package manager
-            sh 'pip install --upgrade pip'            
+            sh 'pip3 install --upgrade pip'            
 
             // Example: Install Python dependencies using pip
-            sh 'pip install -r dependencies.txt'
+            sh 'pip3 install -r dependencies.txt'
             
             // Example: Run linting
             sh 'pylint main.py'
