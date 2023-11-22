@@ -27,7 +27,7 @@ def hello_world():
 @app.route('/', methods=['POST'])
 def predict():
     imagefile = request.files['imagefile']
-    # ------- basically saving the image somewhere locally -----
+    # ------- saving the image somewhere locally -----
     # save the input image now
     image_path = 'images/' + imagefile.filename 
     print('image path', image_path)
