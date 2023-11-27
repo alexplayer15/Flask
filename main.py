@@ -47,7 +47,7 @@ def predict():
     #   decoded_predictions = decode_predictions(predictions, top=3)[0]  # Get top 3 predictions
     #   print(decoded_predictions)
     # Convert the prediction results to a list of tuples (label, description, probability)
-    # results = [(label, description, probability) 
+    # results = [(label, description, probability)
     #   for (label, description, probability) in decoded_predictions]
     #   print(results)
 
