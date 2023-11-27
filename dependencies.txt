@@ -2,5 +2,5 @@ keras==2.10.0
 numpy
 Pillow==8.4.0
 tensorflow==2.6.2
-flask==3.0.0
+flask==2.0.3
 pylint==3.0.2
