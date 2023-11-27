@@ -22,13 +22,15 @@ app = Flask('img_classifier')
 # model = VGG16(weights='imagenet')
 
 @app.route('/')
-"""this function renders inputted images"""
+
 def hello_world():
+    """this function renders inputted images"""
     return render_template('index.html')
 
 @app.route('/', methods=['POST'])
-"""this function predicts what that inputted images is"""
+
 def predict():
+    """this function predicts what that inputted images is"""
     imagefile = request.files['imagefile']
     # ------- saving the image somewhere locally -----
     # save the input image now
