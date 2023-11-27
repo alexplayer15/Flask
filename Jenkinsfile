@@ -23,6 +23,9 @@ pipeline {
             
             // Example: Run unit tests
             // sh 'python -m unittest discover -s tests -p "*_test.py"'
+
+            // Run Flask app on localhost (5001)
+            sh 'python main.py'
         }
     }
 
