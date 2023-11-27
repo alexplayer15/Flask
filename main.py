@@ -1,3 +1,4 @@
+"""This module runs a Flask app"""
 from flask import Flask, render_template, request
 # from PIL import Image
 # import numpy as np
@@ -21,10 +22,12 @@ app = Flask('img_classifier')
 # model = VGG16(weights='imagenet')
 
 @app.route('/')
+"""this function renders inputted images"""
 def hello_world():
-  return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/', methods=['POST'])
+"""this function predicts what that inputted images is"""
 def predict():
     imagefile = request.files['imagefile']
     # ------- saving the image somewhere locally -----
@@ -41,9 +44,9 @@ def predict():
     #   predictions = model.predict(img_array)
     #   decoded_predictions = decode_predictions(predictions, top=3)[0]  # Get top 3 predictions
     #   print(decoded_predictions)
-    # # Convert the prediction results to a list of tuples (label, description, probability)
+    # Convert the prediction results to a list of tuples (label, description, probability)
     # results = [(label, description, probability) 
-    #            for (label, description, probability) in decoded_predictions]
+    #   for (label, description, probability) in decoded_predictions]
     #   print(results)
 
     return render_template('index.html')
