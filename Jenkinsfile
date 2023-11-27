@@ -19,7 +19,7 @@ pipeline {
             sh 'python3 -m pip install -r dependencies.txt'
             
             // Example: Run linting
-            sh 'pylint main.py'
+            sh 'python3 -m pylint main.py'
             
             // Example: Run unit tests
             // sh 'python -m unittest discover -s tests -p "*_test.py"'
