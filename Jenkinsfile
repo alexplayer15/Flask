@@ -20,15 +20,25 @@ pipeline {
             
             // Example: Run linting
             sh 'python3 -m pylint main.py'
+                
+            // Set up the virtual environment
+            sh '''
+                python -m venv test
+                source venv/bin/activate
+             '''
             
-            // Example: Run unit tests
-            // sh 'python -m unittest discover -s tests -p "*_test.py"'
         }
 
-    stage('Deploy') {
+    stage('Test') {
         steps {
-            sh 'python main.py'
+            sh 'python3 -m pip list'
+             // Activate the virtual environment and run tests
+            sh 'source venv/bin/activate && python run_tests.py'
+     }
     }
 
-}
-}
+//     stage('Deploy'){
+//         steps{
+
+// }
+// }
