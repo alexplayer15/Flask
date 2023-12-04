@@ -1,4 +1,5 @@
 import flask
+import numpy
 
 def test_flask_version():
     assert flask.__version__ == '2.0.3'
