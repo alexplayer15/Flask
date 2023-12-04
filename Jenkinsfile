@@ -23,8 +23,8 @@ pipeline {
                 
             // Set up the virtual environment
             sh '''
-                python -m venv test
-                source venv/bin/activate
+                python3 -m venv test
+                source test/bin/activate
              '''
             
         }
