@@ -34,7 +34,8 @@ pipeline {
         steps {
             sh 'python3 -m pip list'
              // Activate the virtual environment and run tests
-            sh 'source venv/bin/activate && python run_tests.py'
+            sh '. test/bin/activate'
+            sh 'python3 run_tests.py'
      }
     }
     }
