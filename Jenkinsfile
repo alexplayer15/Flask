@@ -28,6 +28,7 @@ pipeline {
              '''
             
         }
+    }
 
     stage('Test') {
         steps {
@@ -36,9 +37,7 @@ pipeline {
             sh 'source venv/bin/activate && python run_tests.py'
      }
     }
+    }
+ 
 
-//     stage('Deploy'){
-//         steps{
 
-// }
-// }
