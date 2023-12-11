@@ -12,6 +12,9 @@ pipeline {
         }
     stage('Build') {
         steps {
+            // print version of python so we can check we have the same versions
+            sh 'python3 --version'
+            
             // update python package manager
             sh 'python3 -m pip install --upgrade pip'            
 
