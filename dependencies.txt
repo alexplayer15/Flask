@@ -1,6 +1,7 @@
 keras==2.10.0
 numpy
 Pillow==8.4.0
-flask==2.0.3
+flask==2.3.3
 pylint==3.0.0a4
 pytest
+Werkzeug==2.3.8
