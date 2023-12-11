@@ -10,4 +10,4 @@ COPY /home/alex_player/Flask /app/
 
 EXPOSE 5001
 
-CMD ["python3", "main.py"]
+CMD ["python", "main.py"]
