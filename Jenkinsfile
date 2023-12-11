@@ -37,8 +37,8 @@ pipeline {
         steps {
             sh 'python3 -m pip list'
              // Activate the virtual environment and run tests
-            sh '. test/bin/activate'
-            sh 'python3 -m pytest tests.py'
+            sh '. test/bin/activate && python3 -m pytest tests.py'
+            sh 'deactivate' // Deactivate the virtual environment after tests
      }
     }
     }
