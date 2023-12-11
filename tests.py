@@ -2,10 +2,10 @@ import flask
 import numpy
 
 def test_flask_version():
-    assert flask.__version__ == '2.0.3'
+    assert flask.__version__ == '2.3.3'
 
 def test_numpy_version():
-    assert numpy.__version__ == '1.19.5'
+    assert numpy.__version__ == '1.26.2'
 
 # def check_health_status(website_url):
 
