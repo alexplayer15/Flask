@@ -6,7 +6,8 @@ COPY dependencies.txt /app/
 
 RUN pip install --no-cache-dir -r dependencies.txt
 
-COPY /home/alex_player/Flask /app/
+COPY /home/alex_player/Flask/main.py /app/
+COPY /home/alex_player/Flask/templates /app/templates
 
 EXPOSE 5001
 
