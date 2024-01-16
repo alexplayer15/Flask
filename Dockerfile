@@ -2,7 +2,7 @@ FROM python:3.10
 
 WORKDIR /app
 
-COPY dependencies.txt /app/
+COPY /home/alex_player/Flask/dependencies.txt /app/
 
 RUN pip install --no-cache-dir -r dependencies.txt
 
