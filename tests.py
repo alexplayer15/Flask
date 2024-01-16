@@ -5,7 +5,7 @@ def test_flask_version():
     assert flask.__version__ == '2.3.3'
 
 def test_numpy_version():
-    assert numpy.__version__ == '1.26.2'
+    assert numpy.__version__ == '1.26.3'
 
 # def check_health_status(website_url):
 
