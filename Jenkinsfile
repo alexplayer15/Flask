@@ -48,8 +48,8 @@ stage('Deploy to Docker'){
     steps {
         script {
              sh 'docker build -t flask-app .'
-             sh 'docker push flask-app'
-             sh 'docker container run -d -p 5001:5001 flask-app'
+             sh 'docker push alexplayer15/flask-app'
+             sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
         }
     }
 }
