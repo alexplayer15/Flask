@@ -41,8 +41,6 @@ pipeline {
             sh 'exit' // Deactivate the virtual environment after tests
      }
     }
-    }
-}
 
     stage('Deploy to Docker'){
         steps {
@@ -52,6 +50,8 @@ pipeline {
                  sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
         }
     }
+}
+}
                 
 
 
