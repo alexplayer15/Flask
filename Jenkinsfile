@@ -44,15 +44,15 @@ pipeline {
     }
 }
 
-stage('Deploy to Docker'){
-    steps {
-             sh 'docker build -t flask-app .'
-             sh 'docker push alexplayer15/flask-app'
-             sh 'docker rm -f flask-container || true'
-             sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
+    stage('Deploy to Docker'){
+        steps {
+                 sh 'docker buildx build -t flask-app .'
+                 sh 'docker push alexplayer15/flask-app'
+                 sh 'docker rm -f flask-container || true'
+                 sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
+        }
     }
-}
-            
+                
 
 
 
