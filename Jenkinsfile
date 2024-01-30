@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials') 
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -11,6 +15,7 @@ pipeline {
             }
         }
     stage('Build') {
+
         steps {
             // print version of python so we can check we have the same versions
             sh 'python3 --version'
