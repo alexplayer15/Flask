@@ -50,7 +50,7 @@ pipeline {
     stage('Deploy to Docker'){
         steps {
             script {
-                withDockerRegistry([credentialsId: 'docker-hub-credentials', url:'https://hub.docker.com/repository/docker/alexplayer15/flask-app/general'])
+                withDockerRegistry([credentialsId: 'docker-hub-credentials', url:'https://index.docker.io/v1/'])
                      sh 'docker buildx build -t alexplayer15/flask-app .'
                      sh 'docker push alexplayer15/flask-app'
                      sh 'docker rm -f flask-container || true'
