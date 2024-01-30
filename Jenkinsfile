@@ -49,10 +49,13 @@ pipeline {
 
     stage('Deploy to Docker'){
         steps {
-                 sh 'docker buildx build -t alexplayer15/flask-app .'
-                 sh 'docker push alexplayer15/flask-app'
-                 sh 'docker rm -f flask-container || true'
-                 sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
+            script {
+                withDockerRegistry([credentialsId: 'docker-hub-credentials', url:'https://hub.docker.com/repository/docker/alexplayer15/flask-app/general'])
+                     sh 'docker buildx build -t alexplayer15/flask-app .'
+                     sh 'docker push alexplayer15/flask-app'
+                     sh 'docker rm -f flask-container || true'
+                     sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
+            }
         }
     }
 }
