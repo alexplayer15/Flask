@@ -57,13 +57,18 @@ pipeline {
         }
     
     stage('Push Docker Image'){
+        steps{
                 withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
                     sh 'docker push alexplayer15/flask-app:test'
                     sh 'docker rm -f alexplayer15/flask-app || true'
-        }         
-     }
+            }
+        }
+      }         
+    
     stage('Run Docker Image'){
+        steps{
              sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
+        }
     }
 }
 }
