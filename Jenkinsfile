@@ -55,7 +55,7 @@ pipeline {
                      // sh "docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}"
                      sh 'docker tag alexplayer15/flask-app:latest alexplayer15/flask-app:test'
                      sh 'docker push alexplayer15/flask-app:test'
-                     sh 'docker rm -f flask-container || true'
+                     sh 'docker rm -f alexplayer15/flask-app || true'
                      sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
             }
         }
