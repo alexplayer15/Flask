@@ -47,18 +47,23 @@ pipeline {
      }
     }
 
-    stage('Deploy to Docker'){
+    stage('Build Docker Image'){
         steps {
             script {
-                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://registry-1.docker.io']) {
                      sh 'docker buildx build -t alexplayer15/flask-app .'                    
                      sh 'docker tag alexplayer15/flask-app:latest alexplayer15/flask-app:test'
-                     sh 'docker push alexplayer15/flask-app:test'
-                     sh 'docker rm -f alexplayer15/flask-app || true'
-                     sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
                 }
             }
         }
+    
+    stage('Push Docker Image'){
+                withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
+                    sh 'docker push alexplayer15/flask-app:test'
+                    sh 'docker rm -f alexplayer15/flask-app || true'
+        }         
+     }
+    stage('Run Docker Image'){
+             sh 'docker container run -d -p 5001:5001 --name flask-container alexplayer15/flask-app'
     }
 }
 }
