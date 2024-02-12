@@ -59,9 +59,11 @@ pipeline {
         stage('Push Docker Image'){
             steps{
                    script{
+                       withCredentials([string(credentialsId: 'dockerusername', variable: 'dockerusername')]) {
                         withCredentials([string(credentialsId: 'dockerpassword', variable: 'dockerpassword')]) {
-                        sh 'docker login -u alexplayer15 -p ${dockerpassword}'
-                    }    
+                        sh 'docker login -u ${dockerusername} -p ${dockerpassword}'
+                    }
+                       }
                         sh 'docker push alexplayer15/flask-app:test'
                    }
                 }
